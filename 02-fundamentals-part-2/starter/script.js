@@ -1,3 +1,4 @@
+//const i = require('i');
 // console.log(`Fundamentals Part 2`);
 
 // // Functions - Declarations and Expressions
@@ -123,4 +124,160 @@
 // scoreDolphins = calcAverage(85, 54, 41);
 // scoreKoalas = calcAverage(23, 34, 27);
 // console.log(checkWinner(scoreDolphins, scoreKoalas));
+
+//ARRAYS (this is crazy)
+// const studentGrade = 85;
+
+
+// const grades = [85, 92, 78, 96, 88];
+// console.log(grades);
+
+// const mixed = ['Jonas', 27, true, grades];
+// console.log(mixed);
+
+// const years = new Array(1991, 1984, 2008, 2020);
+// console.log(years);
+
+// console.log(grades[0]);
+// console.log(grades[3]);
+
+// console.log(grades.length);
+
+// grades[0] = 99;
+// console.log(grades);
+// console.log(grades[0]);
+
+// //SO FUN!
+// const calcAge = function(birthYear) {
+//     return 2025 - birthYear
+// }
+
+// const ages = [calcAge(2000), calcAge(1985), calcAge(1995)];
+// console.log(ages);
+// ages[1] = 30;
+// console.log(ages);
+
+// //ARRAY METHODS
+// const friends = [ 'Queeny', 'Jenalie', 'Lester'];
+// console.log(friends);
+// const newLength = friends.push('Gilbert')
+// console.log(friends);
+// console.log(newLength);
+
+// friends.unshift('bangis'); // adds to beginning
+// console.log(friends);
+
+// const popped = friends.pop(); // removes last
+// console.log(friends);
+// console.log(popped);
+
+// const shifted = friends.shift(); // removes first
+// console.log(shifted);
+// console.log(friends);
+
+// // pop()
+// // shift()
+
+// console.log(friends.indexOf('Queeny'));
+// console.log(friends.indexOf('Jenalie'));
+
+
+// console.log(friends.includes('Lester'));
+// console.log(friends.includes('Gilbert'));
+
+
+
+// //ARRAY ITERATION
+
+// for (let i = 0; i < friends.length; i++) {
+//     console.log(friends[i]);
+// }
+
+// friends.forEach(function (friends, index) {
+//     console.log(`${index + 1}: ${friends}`);
+// })
+
+
+
+// const grades = [85, 92, 78, 96, 88, 74];
+// let total = 0;
+
+// for (let i = 0; i < grades.length; i++) {
+//     total += grades[i];
+// }
+
+// const average = total / grades.length;
+// console.log(`Average grade: ${average.toFixed(2)}`);
+
+// let passedCount = 0;
+// grades.forEach(grades) => {
+//     if (grade >= 70) passedCount++;
+// }
+
+// console.log(`${passedCount} out of ${grades.length} students passed`) ;
+
+
+//CODING CHALLENGE #2: Student Grade Manager
+
+
+const grades = [78, 85, 92, 67, 88, 95, 73, 82];
+function calculateAverage(grades) {
+    let sum = 0
+    for (let i = 0; i < grades.length; i++) {
+        const element = grades[i];
+        sum += element;
+    }
+    return sum / grades.length;
+}
+console.log(calculateAverage(grades));
+
+function findHighestGrade(grades) {
+    let highest = grades[0];
+    for (let i = 1; i < grades.length; i++) {
+        if (grades[i] > highest) {
+        highest = grades[i];
+        }
+    }
+    return highest;
+}
+
+console.log(findHighestGrade(grades));
+
+// Function to find lowest grade
+function findLowestGrade(grades) {
+    let lowest = grades[0];
+    for (let i = 1; i < grades.length; i++) {
+        if (grades[i] < lowest) {
+        lowest = grades[i];
+        }
+    }
+    return lowest;
+}
+
+console.log(findLowestGrade(grades));
+
+// Function to count passing students
+function countPassing(grades, passingGrade) {
+    let count = 0;
+    for (let i = 0; i < grades.length; i++) {
+        if (grades[i] >= passingGrade) {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(`${countPassing(grades, 70)} out of ${grades.length}`);
+
+// Generate complete report
+const average = calculateAverage(grades);
+const highest = findHighestGrade(grades);
+const lowest = findLowestGrade(grades);
+const passing = countPassing(grades, 70);
+
+console.log("=== GRADE REPORT ===");
+console.log(`Average: ${average.toFixed(2)}`);
+console.log(`Highest: ${highest}`);
+console.log(`Lowest: ${lowest}`);
+console.log(`Passing students: ${passing} out of ${grades.length}`);
 
