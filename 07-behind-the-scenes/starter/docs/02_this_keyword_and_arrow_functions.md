@@ -330,7 +330,7 @@ git commit
 1. **Enter Insert Mode:**
 
    - Press `i` to enter insert mode
-   - You'll see `-- INSERT --` at the bottom of the screen
+   - You'll see `-- INSERT --` at the bottom ofg the screen
    - Now you can type and edit text normally
 
 2. **Edit the commit message:**
